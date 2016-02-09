@@ -63,7 +63,7 @@ gulp.task('html', ['resources'], () => {
     .pipe(dest());
 });
 
-gulp.task('assets', () => src(['./src/{img,demo}/**']).pipe(dest()));
+gulp.task('assets', () => src(['./src/favicon.ico', './src/{img,demo}/**']).pipe(dest()));
 
 gulp.task('watch', ['build'], () => {
     gulp.watch('./src/css/**/*.scss', ['style']);
