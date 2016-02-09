@@ -1,6 +1,12 @@
 @import '../../node_modules/livestyle-re-view/style/main';
 @import 'vendor/likely';
 
+@mixin mobile {
+    @media (max-width: 500px) {
+        @content;
+    }
+}
+
 html, body {
     padding: 0;
     margin: 0;
@@ -11,6 +17,10 @@ html, body {
     overflow: visible;
     width: auto;
     height: auto;
+
+    @include mobile {
+        font-size: 15px;
+    }
 }
 
 hr {
@@ -30,16 +40,25 @@ h1 {
 	margin-bottom: 60px;
 	margin-top: 0;
     position: relative;
-}
 
-h1::before {
-    content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzQiIGhlaWdodD0iNzQiIHZpZXdCb3g9IjAgMCA3NCA3NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSIgaWQ9ImEiPjxzdG9wIHN0b3AtY29sb3I9IiM1OERBQ0MiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMTRBMzhCIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgeD0iLTUwJSIgeT0iLTUwJSIgd2lkdGg9IjIwMCUiIGhlaWdodD0iMjAwJSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiBpZD0iYiI+PGZlT2Zmc2V0IGR5PSIyIiBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93T2Zmc2V0T3V0ZXIxIi8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMyIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIi8+PGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjMgMCIgaW49InNoYWRvd0JsdXJPdXRlcjEiIHJlc3VsdD0ic2hhZG93TWF0cml4T3V0ZXIxIi8+PGZlTWVyZ2U+PGZlTWVyZ2VOb2RlIGluPSJzaGFkb3dNYXRyaXhPdXRlcjEiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxnIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUgNSkiPjxyZWN0IGZpbHRlcj0idXJsKCNiKSIgeD0iMzMiIHk9IjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI1MiIgcng9IjIiLz48cmVjdCBmaWx0ZXI9InVybCgjYikiIHg9IjYiIHk9IjYiIHdpZHRoPSIyMSIgaGVpZ2h0PSIzMyIgcng9IjIiLz48L2c+PC9zdmc+');
-    position: relative;
-    top: 18px;
-    display: inline-block;
-    margin-right: 10px;
-    width: 74px;
-    height: 74px;
+    &::before {
+        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzQiIGhlaWdodD0iNzQiIHZpZXdCb3g9IjAgMCA3NCA3NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSIgaWQ9ImEiPjxzdG9wIHN0b3AtY29sb3I9IiM1OERBQ0MiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMTRBMzhCIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgeD0iLTUwJSIgeT0iLTUwJSIgd2lkdGg9IjIwMCUiIGhlaWdodD0iMjAwJSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94IiBpZD0iYiI+PGZlT2Zmc2V0IGR5PSIyIiBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93T2Zmc2V0T3V0ZXIxIi8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMyIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIi8+PGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjMgMCIgaW49InNoYWRvd0JsdXJPdXRlcjEiIHJlc3VsdD0ic2hhZG93TWF0cml4T3V0ZXIxIi8+PGZlTWVyZ2U+PGZlTWVyZ2VOb2RlIGluPSJzaGFkb3dNYXRyaXhPdXRlcjEiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxnIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUgNSkiPjxyZWN0IGZpbHRlcj0idXJsKCNiKSIgeD0iMzMiIHk9IjYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI1MiIgcng9IjIiLz48cmVjdCBmaWx0ZXI9InVybCgjYikiIHg9IjYiIHk9IjYiIHdpZHRoPSIyMSIgaGVpZ2h0PSIzMyIgcng9IjIiLz48L2c+PC9zdmc+');
+        position: relative;
+        top: 18px;
+        display: inline-block;
+        margin-right: 10px;
+        width: 74px;
+        height: 74px;
+
+        @include mobile {
+            display: block;
+            margin: 0 auto 20px;
+        }
+    }
+
+    @include mobile {
+        margin-bottom: 30px;
+    }
 }
 
 h2 {
@@ -52,6 +71,9 @@ h2 {
 
 p {
 	margin-top: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 a {
@@ -68,6 +90,12 @@ a {
     margin-bottom: -50px;
     overflow: hidden;
     z-index: 2;
+
+    @include mobile {
+        margin-top: -10px;
+        margin-bottom: -10px;
+        height: 400px;
+    }
 }
 
 .page-block {
@@ -100,6 +128,10 @@ a {
     &_wider {
         max-width: 1200px;
     }
+
+    @include mobile {
+        padding: 20px;
+    }
 }
 
 .install-button {
@@ -110,11 +142,20 @@ a {
 	text-decoration: none;
 	padding: 6px 35px;
 	font-size: 1em;
+
+    @include mobile {
+        padding: 8px 20px;
+    }
 }
 
 .comment {
 	font-size: 0.8em;
 	margin-bottom: 0;
+    &_mini {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #aaa;
+    }
 }
 
 .usage {
@@ -128,6 +169,11 @@ a {
     justify-content: space-between;
     align-items: stretch;
 
+    @include mobile {
+        display: block;
+        font-size: 0.9em;
+    }
+
     &__item {
         display: inline-block;
         width: 30%;
@@ -136,6 +182,11 @@ a {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include mobile {
+            display: block;
+            width: auto;
+        }
 
         &::before {
             counter-increment: usage;
@@ -192,6 +243,10 @@ a {
 	padding: 50px 0 20px;
 	text-align: center;
 	font-size: 0.6em;
+
+    @include mobile {
+        font-size: 0.8em;
+    }
 }
 
 .footer-links {
@@ -203,6 +258,9 @@ a {
     &__item {
     	display: inline-block;
     	margin: 0 15px;
+        @include mobile {
+            margin: 0 7px;
+        }
 
         a {
         	text-decoration: none;
@@ -221,7 +279,12 @@ a {
     width: 300px;
     text-align: left;
     background: rgba(255, 255, 255, 0.2);
-    margin: 50px auto;
+    margin: 0 auto;
+
+    @include mobile {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
     .carbon-img {
         border: none;
