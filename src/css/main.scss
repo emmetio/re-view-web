@@ -188,20 +188,20 @@ a {
             width: auto;
         }
 
-        &::before {
-            counter-increment: usage;
-            content: counter(usage) '. ';
-            display: inline-block;
-            width: 1em;
-            padding-right: 0.3em;
-            text-align: right;
-            margin-left: -1.3em;
-            position: absolute;
-            color: #aaa;
-        }
-
         &-content {
             margin: 0;
+            position: relative;
+            &::before {
+                counter-increment: usage;
+                content: counter(usage) '. ';
+                display: inline-block;
+                width: 1em;
+                padding-right: 0.3em;
+                text-align: right;
+                margin-left: -1.3em;
+                position: absolute;
+                color: #aaa;
+            }
         }
     }
 
