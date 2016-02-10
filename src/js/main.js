@@ -28,6 +28,11 @@ const breakpointSpecs = [
     {width: 720}
 ];
 
+
+if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+	document.documentElement.classList.add('is-safari');
+}
+
 createBreakpointsView();
 createDeviceWallView();
 

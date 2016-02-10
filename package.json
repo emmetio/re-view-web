@@ -10,7 +10,7 @@
   "author": "Sergey Chikuyonok <serge.che@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "livestyle-re-view": "git+https://github.com/livestyle/re-view#v2.0.1"
+    "livestyle-re-view": "livestyle/re-view#v2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
