@@ -235,6 +235,16 @@ a {
         &_gplus:hover {
         	background-color: rgba(246,207,207,.8);
         }
+
+        &_phunt:hover {
+        	background-color: rgba(202, 96, 64, 0.4);
+        }
+    }
+
+    &__link,
+    &__link:hover {
+        text-decoration: none;
+        color: inherit;
     }
 }
 
